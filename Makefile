@@ -4,7 +4,7 @@ LIBS 	= -lpthread
 
 c:
 	gcc $(CFLAGS) -std=c17 -O3 $(LIBS) -o code code.c
-	gcc $(CFLAGS) -O3 $(LIBS) -o normal normal.c
+	gcc $(CFLAGS) -std=c17 -O3 $(LIBS) -o normal normal.c
 
 cpp:
 	g++ $(CFLAGS) -std=c++17 -O3 $(LIBS) -o code code.cpp
@@ -12,7 +12,7 @@ cpp:
 
 time:
 	time ./code
-	time./normal
+	time ./normal
 
 debugc:
 	gcc $(CFLAGS) -std=c17 -g $(LIBS) -o code code.c && gdb ./code
